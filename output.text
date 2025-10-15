@@ -47,9 +47,9 @@ SQL> select * from clientmaster;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
+       101 gayatri
        102 pooja
-       102 pranat
+       102 sandesh
 
 SQL> update clientmaster set srno = 103 where name = 'pranat';
 
@@ -59,15 +59,15 @@ SQL> select * from clientmaster;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
+       101 gayatri
        102 pooja
-       103 pranat
+       103 sandesh
 
 SQL> select * from Audit_t;
 
       SRNO NAME
 ---------- --------------------
-       102 pranat
+       102 sandesh
 
 SQL> delete from clientmaster where srno = 102;
 
@@ -77,7 +77,7 @@ SQL> select * from Audit_t;
 
       SRNO NAME
 ---------- --------------------
-       102 pranat
+       102 sandesh
        102 pooja
 
 SQL> commit;
@@ -85,7 +85,7 @@ SQL> commit;
 Commit complete.
 
 
-SQL> @C:\Users\Prajakta\Desktop\sqlplus\trigger\update.sql
+SQL> @C:\Users\gayatri\Desktop\sqlplus\trigger\update.sql
 
 Trigger created.
 
@@ -93,8 +93,8 @@ SQL> select * from clientmaster;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
-       103 pranat
+       101 gayatri
+       103 sandesh
 
 SQL> insert into cilentmaster (srno,name) values (103,'pooja');
 insert into cilentmaster (srno,name) values (103,'pooja')
@@ -106,14 +106,14 @@ SQL> select * from Audit_t;
 
       SRNO NAME
 ---------- --------------------
-       102 pranat
+       102 sandesh
        102 pooja
 
 SQL> create table insertbackup as select * from clientmaster;
 
 Table created.
 
-SQL> @C:\Users\Prajakta\Desktop\sqlplus\trigger\insert.sql
+SQL> @C:\Users\gayatri\Desktop\sqlplus\trigger\insert.sql
 
 Trigger created.
 
@@ -121,8 +121,8 @@ SQL> select * from insertbackup;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
-       103 pranat
+       101 gayatri
+       103 sandesh
 
 SQL> insert into clientmaster values(104,'divya');
 
@@ -132,22 +132,22 @@ SQL> select * from Audit_t;
 
       SRNO NAME
 ---------- --------------------
-       102 pranat
+       102 sandesh
        102 pooja
 
 SQL> select * from clientmaster;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
-       103 pranat
+       101 gayatri
+       103 sandesh
        104 divya
 
-SQL> @C:\Users\Prajakta\Desktop\sqlplus\trigger\Audit_insert.sql
+SQL> @C:\Users\gayatri\Desktop\sqlplus\trigger\Audit_insert.sql
 
 Trigger created.
 
-SQL> @C:\Users\Prajakta\Desktop\sqlplus\trigger\Audit_update.sql
+SQL> @C:\Users\gayatri\Desktop\sqlplus\trigger\Audit_update.sql
 
 Trigger created.
 
@@ -155,23 +155,23 @@ SQL> select * from clientmaster;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
-       103 pranat
+       101 gayatri
+       103 sandesh
        104 divya
 
 SQL> select * from Audit_t;
 
       SRNO NAME
 ---------- --------------------
-       102 pranat
+       102 gayatri
        102 pooja
 
 SQL> select * from insertbackup;
 
       SRNO NAME
 ---------- --------------------
-       101 prajakta
-       103 pranat
+       101 gayatri
+       103 sandesh
        104 divya
 
 SQL> commit;
